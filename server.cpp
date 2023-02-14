@@ -63,13 +63,14 @@ int main(int argc, char *argv[]) {
 	if (str_len == -1)
 		error_handling("read() error");
 
-	printf("클라이언트가 준거: %s\n", message);
+	printf("receive : %s\n", message);
 
 
-	// write 함수는 데이터를 전송하는 기능의 함수인데, 이 문장이 실행됬다는 것은 연결요청이 있었다는 뜻
-	write(client_sock, message, sizeof(message));
-
-	
+	// 서버에 데이터를 보냄
+	data[0] = 'O';
+	data[1] = 'P';
+	data[2] = 'Q';
+	write(sock, data, sizeof(data));
 
 	// 메시지를 출력함
 	//printf("Message from client:%s\n", message);
