@@ -70,7 +70,7 @@ int main(int argc, char *argv[]) {
 	data[0] = 'O';
 	data[1] = 'P';
 	data[2] = 'Q';
-	write(sock, data, sizeof(data));
+	write(client_sock, data, sizeof(data));
 
 	// 메시지를 출력함
 	//printf("Message from client:%s\n", message);
